@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap') ;
 
 body {
-  background-image: url('https://mocah.org/uploads/posts/547224-landscape-wallpaper.gif');
-  background-size: cover;
+  background: rgb(111, 128, 167);
+}
+
+.container-main-login {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
 }
 
 .login-title {
@@ -11,29 +19,49 @@ body {
   background-size: contain;
   color: transparent;
   font-family: Sigmar One , cursive;
-  font-size: 60px;
+  font-size: 50px;
   line-height: 0.75;
-  margin: 10px;
   text-align: center;
   -webkit-text-stroke: 2px white;
 }
 
 .login-panel {
   align-items: center;
-  background-color: #d2d7df;
-  border: 1px solid black;
-  border-radius: 16px;
-  box-shadow: 1px 3px 10px black;
   display: flex;
-  flex-direction: column;
-  margin: 15% auto;
-  padding: 20px;
-  width: 300px;
+  flex-flow: column;
+  justify-content: center;
 }
 
-.login-panel img {
-  margin: 10px;
-  padding: 5px;
+.label-login-content p {
+  align-self: flex-start;
+  display: flex;
+  margin-left: 12px;
+}
+
+.login-panel label {
+  align-items: center;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.config-button-login2 {
+  display: flex;
+  text-decoration: none;
+  margin-top: 1.5em;
+}
+
+.config-button-login {
+  display: flex;
+  text-decoration: none;
+}
+
+.login-panel input {
+  border-radius: 8px;
+  padding: 20px;
+  margin: auto;
+  width: 200px;
+  outline: none;
 }
 
 .login-panel input {
@@ -49,11 +77,40 @@ body {
   color: white;
   padding: 10px 24px;
   width: 100%;
+  transition: 0.2s;
 }
 
 .login-panel .btn-login-screen:hover {
   background-color: aquamarine;
   color: black;
   cursor: pointer;
-  font-size: 16px;
+  transition: 0.2s;
+}
+
+@media only screen and (max-width: 450px) {
+  .login-title {
+    font-size: 160%;
+  }
+
+  .login-panel input {
+    width: 4em;
+  }
+
+  .input-login-size {
+    width: 60% !important;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .login-title {
+    font-size: 1em;
+  }
+
+  .login-panel input {
+    width: 4em;
+  }
+
+  .input-login-size {
+    width: 40% !important;
+  }
 }

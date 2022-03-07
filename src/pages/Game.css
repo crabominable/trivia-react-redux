@@ -1,14 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap') ;
 
 .timer {
-  background-color: whitesmoke;
-  border-radius: 50%;
-  box-shadow: 0 0  10px 4px black;
-  font-family: Bebas Neue , cursive;
-  font-size: 100px;
-  height: 140px;
-  line-height: 150px;
-  margin: 0 auto;
-  text-align: center;
-  width: 140px;
+  color: #e4e6eb;
+  font-family: Alfa Slab One , cursive;
+  font-size: 24px;
+  text-shadow: 3px 3px 3px black;
+  -webkit-text-stroke: 1px black;
+  transition: all 1s ease-in-out;
+}
+
+.game-screen-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 73vh;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1020px) {
+  .timer {
+    font-size: 20px;
+  }
 }

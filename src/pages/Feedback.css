@@ -19,8 +19,9 @@
 .feedback-text, .feedback-score {
   color: aliceblue;
   font-family: 'Press Start 2p' , cursive;
-  font-size: 40px;
+  font-size: 32px;
   text-shadow: 3px 3px black;
+  text-align: center;
 }
 
 .feedback-text:hover, .feedback-score:hover {
@@ -32,10 +33,6 @@
   0% { color: #444; }
 
   100% { color: whitesmoke; }
-}
-
-.fireworks {
-  padding: 20px 1px;
 }
 
 .feedback-content button {
@@ -52,8 +49,45 @@
   width: auto;
 }
 
+.fireworks {
+  margin: 1em;
+  width: 180px;
+}
+
 .feedback-content button:hover {
-  background-color: #fad47c;
+  background-color: aquamarine;
+  color: black;
   cursor: pointer;
-  transform: scale(1.1, 1.1);
+  transition: 0.2s;
+}
+
+@media only screen and (max-width: 700px) {
+  .timer {
+    font-size: 20px;
+  }
+
+  .feedback-text, .feedback-score {
+    color: aliceblue;
+    font-family: 'Press Start 2p' , cursive;
+    font-size: 20px;
+    text-shadow: 3px 3px black;
+  }
+
+  .fireworks {
+    width: 120px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .feedback-content button {
+    background-color: #2069e0;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px black;
+    font-size: 14px;
+    font-weight: 700;
+    height: auto;
+    margin-left: 6px;
+    margin-top: 6px;
+    padding: 4px 18px;
+  }
 }

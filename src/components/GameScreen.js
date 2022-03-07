@@ -35,7 +35,8 @@ class GameScreen extends React.Component {
   componentDidUpdate() {
     const state = localStorage.getItem('state');
     const { point } = this.props;
-    const newPlayer = { ...JSON.parse(state),
+    const newPlayer = {
+      ...JSON.parse(state),
       player: {
         ...JSON.parse(state).player,
         score: point,
@@ -73,7 +74,8 @@ class GameScreen extends React.Component {
 
   mudarState() {
     const { point } = this.props;
-    this.setState((prevState) => ({ ...prevState,
+    this.setState((prevState) => ({
+      ...prevState,
       player: parseFloat(prevState.player.point) + point,
     }));
   }
@@ -82,12 +84,12 @@ class GameScreen extends React.Component {
     const { isIncorrect } = this.state;
     return (
       <button
-        data-testid={ `wrong-answer-${index}` }
-        className={ `${isIncorrect} botao` }
+        data-testid={`wrong-answer-${index}`}
+        className={`${isIncorrect} botao`}
         type="button"
         value="incorrect"
-        key={ index }
-        onClick={ this.handleClick }
+        key={index}
+        onClick={this.handleClick}
       >
         {item}
       </button>);
@@ -99,8 +101,10 @@ class GameScreen extends React.Component {
     if (value === 'correct') {
       this.setState({ isCorrect: value, isIncorrect: 'incorrect' });
       this.setScore('correct');
-      const newPlayer = { ...JSON.parse(state),
-        player: { ...JSON.parse(state).player,
+      const newPlayer = {
+        ...JSON.parse(state),
+        player: {
+          ...JSON.parse(state).player,
           assertions: JSON.parse(state).player.assertions + 1,
         },
       };
@@ -159,7 +163,7 @@ class GameScreen extends React.Component {
           type="button"
           data-testid="btn-next"
           className="feedback"
-          onClick={ this.savePlayerRanking }
+          onClick={this.savePlayerRanking}
         >
           Feedback
         </button>
@@ -172,7 +176,7 @@ class GameScreen extends React.Component {
       <button
         type="button"
         className="next-question"
-        onClick={ this.handleClickQuestion }
+        onClick={this.handleClickQuestion}
         data-testid="btn-next"
       >
         Proxima Pergunta
@@ -195,10 +199,10 @@ class GameScreen extends React.Component {
         <div className="game-content buttons">
           <button
             type="button"
-            className={ `${isCorrect} botao` }
+            className={`${isCorrect} botao`}
             data-testid="correct-answer"
             value="correct"
-            onClick={ this.handleClick }
+            onClick={this.handleClick}
           >
             {pergunta[indexQuestion].correct_answer}
           </button>

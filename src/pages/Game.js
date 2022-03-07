@@ -1,21 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setTimer } from '../actions';
 import { Header, GameScreen } from '../components';
 import './Game.css';
 
 class Game extends React.Component {
   render() {
-    const { location: { state: { name } }, timer } = this.props;
+    const { location: { state: { name } } } = this.props;
     return (
-      <>
+      <div className="game-screen-content">
         <Header name={ name } />
         <GameScreen onClick={ this.setAnswer } />
-        <div className="timer">
-          <span>{timer}</span>
-        </div>
-      </>
+      </div>
     );
   }
 }
@@ -26,17 +22,11 @@ Game.propTypes = {
       name: PropTypes.string,
     }).isRequired,
   }).isRequired,
-  timer: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = ({ game }) => ({
   loading: game.isLoading,
   question: game.question,
-  timer: game.timer,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  reduxTimer: (timer, answer) => dispatch(setTimer(timer, answer)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Game);
+export default connect(mapStateToProps, null)(Game);

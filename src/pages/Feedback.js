@@ -87,7 +87,6 @@ class Feedback extends React.Component {
             className="fireworks"
           />
           { this.handlePlayAgain() }
-          { this.handleButtRanking() }
         </div>
       </>
     );
